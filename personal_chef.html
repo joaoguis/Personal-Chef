@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173d35">
+<meta name="description" content="Personal Chef: experiências gastronômicas personalizadas para sua casa e seus eventos.">
+<title>Personal Chef | Experiências à mesa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#173d35;--bg:#f6f5ef;--sun:#e8bd68;--coral:#c96f55;--card:#fffefa;--muted:#65766d}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:env(safe-area-inset-bottom)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08}
+header,section,footer{padding:54px 22px;max-width:760px;margin:auto}
+.hero{padding-top:70px;padding-bottom:62px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:18px}
+.hero h1{font-size:clamp(46px,12vw,82px);font-weight:800;letter-spacing:-2px}
+.bubble{display:inline-block;background:var(--sun);padding:5px 17px 9px;border-radius:24px 24px 24px 5px;transform:rotate(-2deg)}
+.hero p{font-size:19px;margin:22px 0 26px;max-width:39ch;color:var(--muted)}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:800;padding:14px 23px;border-radius:999px;border:0;font-size:16px;font-family:inherit;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--coral)}
+h2{font-size:34px;font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
+.intro{color:var(--muted);margin-bottom:22px}
+.cards{display:grid;gap:13px}
+.card{background:var(--card);border:1px solid #e8e8dd;border-radius:19px;padding:21px}
+.card .num{display:inline-grid;place-items:center;background:#f5e6c8;width:42px;height:42px;border-radius:13px;font-weight:800;margin-bottom:12px}
+.card h3{font-size:22px;margin-bottom:7px}
+.card p{color:var(--muted);font-size:15px}
+.how{display:grid;gap:12px;list-style:none;padding:0;counter-reset:step}
+.how li{counter-increment:step;background:var(--card);border-radius:15px;padding:15px 17px;display:flex;gap:14px;align-items:center}
+.how li:before{content:counter(step);background:var(--sun);border-radius:50%;width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;font-weight:800}
+.highlight{background:var(--ink);color:white;border-radius:26px;margin:0 14px;padding:30px 23px}
+.highlight h2{color:var(--sun)}
+.highlight p{color:#e1e9e3}
+.quiz{margin-top:20px}
+.q{font-size:18px;font-weight:800;margin:18px 0 12px}
+.opts{display:grid;gap:9px}
+.opt{background:#fff;color:var(--ink);border:2px solid transparent;border-radius:13px;padding:13px 15px;font:700 16px Nunito,sans-serif;text-align:left;cursor:pointer}
+.opt.selected{border-color:var(--sun);background:#fff7e7}
+.result{margin-top:16px}
+footer{font-size:13px;color:var(--muted);text-align:center;padding-top:28px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+@media(min-width:620px){.cards{grid-template-columns:repeat(3,1fr)}.card{height:100%}.hero{padding-top:90px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Uma experiência feita para você</div>
+  <h1><span class="bubble">Sabor</span><br>que transforma momentos.</h1>
+  <p>Uma experiência gastronômica personalizada, com praticidade, cuidado e sabor — no conforto da sua casa.</p>
+  <a class="btn" href="#contato">Solicitar orçamento</a>
+</header>
+
+<section>
+  <div class="eyebrow">O que fazemos</div>
+  <h2>Seu momento merece um menu especial.</h2>
+  <p class="intro">Soluções gastronômicas pensadas para a ocasião, o seu estilo e o que você gosta de comer.</p>
+  <div class="cards">
+    <article class="card"><div class="num">01</div><h3>Jantares especiais</h3><p>Uma ocasião especial merece uma experiência à altura, sem você precisar se preocupar com a cozinha.</p></article>
+    <article class="card"><div class="num">02</div><h3>Eventos e encontros</h3><p>Uma experiência personalizada para receber amigos, família ou convidados.</p></article>
+    <article class="card"><div class="num">03</div><h3>Menu personalizado</h3><p>Opções pensadas conforme suas preferências, necessidades e ocasião.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Como funciona</div>
+  <h2>Da ideia à mesa.</h2>
+  <ol class="how">
+    <li>Você conta qual é a ocasião e o que imaginou.</li>
+    <li>Alinhamos o menu e os detalhes da experiência.</li>
+    <li>Tudo é combinado para tornar seu momento especial.</li>
+  </ol>
+</section>
+
+<section class="highlight" id="contato">
+  <div class="eyebrow" style="color:var(--sun)">Vamos conversar?</div>
+  <h2>Conte o que você está planejando.</h2>
+  <p>Responda rapidinho e envie sua ideia pelo WhatsApp para solicitar um orçamento.</p>
+  <div class="quiz">
+    <p class="q">Qual experiência você procura?</p>
+    <div class="opts" id="opcoes">
+      <button class="opt" type="button" data-value="Jantar especial">Jantar especial</button>
+      <button class="opt" type="button" data-value="Evento ou confraternização">Evento ou confraternização</button>
+      <button class="opt" type="button" data-value="Menu personalizado">Menu personalizado</button>
+      <button class="opt" type="button" data-value="Ainda estou definindo">Ainda estou definindo</button>
+    </div>
+    <div class="result">
+      <a class="btn alt" id="whatsapp" href="https://wa.me/5547988708373?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20o%20servi%C3%A7o%20de%20Personal%20Chef." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>Personal Chef · Uma experiência especial à mesa</footer>
+<script>
+const botoes = document.querySelectorAll('.opt');
+const link = document.getElementById('whatsapp');
+let escolha = '';
+botoes.forEach(botao => {
+  botao.addEventListener('click', () => {
+    botoes.forEach(item => item.classList.remove('selected'));
+    botao.classList.add('selected');
+    escolha = botao.dataset.value;
+    const mensagem = 'Olá! Gostaria de solicitar informações sobre Personal Chef. Tenho interesse em: ' + escolha + '. Podemos conversar?';
+    link.href = 'https://wa.me/5547988708373?text=' + encodeURIComponent(mensagem);
+  });
+});
+</script>
+</body>
+</html>
