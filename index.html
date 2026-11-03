@@ -1,114 +1,461 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#173d35">
-<meta name="description" content="Personal Chef: experiências gastronômicas personalizadas para sua casa e seus eventos.">
-<title>Personal Chef | Experiências à mesa</title>
+<title>Gustavo Henrique Izé | Personal Chef</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--ink:#173d35;--bg:#f6f5ef;--sun:#e8bd68;--coral:#c96f55;--card:#fffefa;--muted:#65766d}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:env(safe-area-inset-bottom)}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08}
-header,section,footer{padding:54px 22px;max-width:760px;margin:auto}
-.hero{padding-top:70px;padding-bottom:62px}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:18px}
-.hero h1{font-size:clamp(46px,12vw,82px);font-weight:800;letter-spacing:-2px}
-.bubble{display:inline-block;background:var(--sun);padding:5px 17px 9px;border-radius:24px 24px 24px 5px;transform:rotate(-2deg)}
-.hero p{font-size:19px;margin:22px 0 26px;max-width:39ch;color:var(--muted)}
-.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:800;padding:14px 23px;border-radius:999px;border:0;font-size:16px;font-family:inherit;cursor:pointer;transition:transform .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.alt{background:var(--coral)}
-h2{font-size:34px;font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
-.intro{color:var(--muted);margin-bottom:22px}
-.cards{display:grid;gap:13px}
-.card{background:var(--card);border:1px solid #e8e8dd;border-radius:19px;padding:21px}
-.card .num{display:inline-grid;place-items:center;background:#f5e6c8;width:42px;height:42px;border-radius:13px;font-weight:800;margin-bottom:12px}
-.card h3{font-size:22px;margin-bottom:7px}
-.card p{color:var(--muted);font-size:15px}
-.how{display:grid;gap:12px;list-style:none;padding:0;counter-reset:step}
-.how li{counter-increment:step;background:var(--card);border-radius:15px;padding:15px 17px;display:flex;gap:14px;align-items:center}
-.how li:before{content:counter(step);background:var(--sun);border-radius:50%;width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;font-weight:800}
-.highlight{background:var(--ink);color:white;border-radius:26px;margin:0 14px;padding:30px 23px}
-.highlight h2{color:var(--sun)}
-.highlight p{color:#e1e9e3}
-.quiz{margin-top:20px}
-.q{font-size:18px;font-weight:800;margin:18px 0 12px}
-.opts{display:grid;gap:9px}
-.opt{background:#fff;color:var(--ink);border:2px solid transparent;border-radius:13px;padding:13px 15px;font:700 16px Nunito,sans-serif;text-align:left;cursor:pointer}
-.opt.selected{border-color:var(--sun);background:#fff7e7}
-.result{margin-top:16px}
-footer{font-size:13px;color:var(--muted);text-align:center;padding-top:28px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
-@media(min-width:620px){.cards{grid-template-columns:repeat(3,1fr)}.card{height:100%}.hero{padding-top:90px}}
+:root {
+  --green: #173d35;
+  --background: #f6f5ef;
+  --gold: #d8b66b;
+  --terra: #b9664f;
+  --white: #fffefa;
+  --muted: #65766d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Nunito, sans-serif;
+  background: var(--background);
+  color: var(--green);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  line-height: 1.15;
+}
+
+header, section, footer {
+  max-width: 1080px;
+  margin: auto;
+  padding: 55px 22px;
+}
+
+.hero {
+  display: grid;
+  gap: 30px;
+  align-items: center;
+  padding-top: 45px;
+}
+
+.eyebrow {
+  color: var(--terra);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.hero h1 {
+  font-size: clamp(43px, 10vw, 76px);
+  letter-spacing: -1px;
+}
+
+.hero h1 span { color: var(--terra); }
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 20px 0 25px;
+}
+
+.hero-photo {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: 999px;
+  transition: .2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.alt { background: var(--terra); }
+
+h2 {
+  font-size: clamp(30px, 6vw, 43px);
+  margin-bottom: 18px;
+}
+
+.intro {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.about {
+  display: grid;
+  gap: 20px;
+}
+
+.panel {
+  background: #eae8dc;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.panel p { color: var(--muted); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.tag {
+  background: white;
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.cards {
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: var(--white);
+  padding: 23px;
+  border-radius: 18px;
+  border: 1px solid #e8e8dd;
+}
+
+.card .number {
+  background: #f3e5c7;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  background: var(--white);
+  padding: 16px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.steps li::before {
+  content: counter(step);
+  background: var(--gold);
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.contact {
+  background: var(--green);
+  color: white;
+  border-radius: 25px;
+  margin: 0 14px;
+  padding: 32px 23px;
+}
+
+.contact h2 { color: var(--gold); }
+
+.contact p { color: #e1e9e3; }
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.option {
+  background: white;
+  color: var(--green);
+  border: 2px solid transparent;
+  border-radius: 13px;
+  padding: 14px;
+  font: 700 16px Nunito;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option.selected {
+  border-color: var(--gold);
+  background: #fff7e7;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (min-width: 720px) {
+  .hero {
+    grid-template-columns: 1.05fr .95fr;
+    padding-top: 70px;
+  }
+
+  .about { grid-template-columns: 1fr 1fr; }
+
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
 </style>
 </head>
+
 <body>
+
 <header class="hero">
-  <div class="eyebrow">Uma experiência feita para você</div>
-  <h1><span class="bubble">Sabor</span><br>que transforma momentos.</h1>
-  <p>Uma experiência gastronômica personalizada, com praticidade, cuidado e sabor — no conforto da sua casa.</p>
-  <a class="btn" href="#contato">Solicitar orçamento</a>
+  <div>
+    <div class="eyebrow">Personal Chef · Joinville / SC</div>
+
+    <h1>
+      Gustavo Henrique
+      <span>Izé</span>
+    </h1>
+
+    <p>
+      Experiências gastronômicas pensadas para transformar
+      encontros e ocasiões especiais em momentos memoráveis.
+      Cuidado, técnica e sabor em cada detalhe.
+    </p>
+
+    <a class="btn" href="#contato">
+      Planejar uma experiência
+    </a>
+  </div>
+
+  <img
+    class="hero-photo"
+    src="IMG_9736.jpeg"
+    alt="Gustavo Henrique Izé, Personal Chef"
+  >
 </header>
 
 <section>
-  <div class="eyebrow">O que fazemos</div>
-  <h2>Seu momento merece um menu especial.</h2>
-  <p class="intro">Soluções gastronômicas pensadas para a ocasião, o seu estilo e o que você gosta de comer.</p>
+  <div class="eyebrow">Sobre o chef</div>
+
+  <h2>
+    Técnica, experiência e paixão pela cozinha.
+  </h2>
+
+  <div class="about">
+    <div>
+      <p class="intro">
+        Gustavo Henrique Izé é profissional formado pela
+        Escola Carême, com três anos de experiência na cozinha
+        e trajetória em restaurantes de Joinville.
+      </p>
+
+      <p class="intro">
+        Durante sua jornada profissional, passou pelas cozinhas
+        dos restaurantes Guará, Vostro, Vino e La Faet,
+        desenvolvendo experiência e repertório gastronômico.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>Trajetória profissional</h3>
+
+      <p>
+        Formação profissional pela Escola Carême e experiência
+        em diferentes cozinhas e operações gastronômicas.
+      </p>
+
+      <div class="tags">
+        <span class="tag">3 anos de experiência</span>
+        <span class="tag">Joinville - SC</span>
+        <span class="tag">Escola Carême</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Experiências</div>
+
+  <h2>Um menu pensado para sua ocasião.</h2>
+
+  <p class="intro">
+    Cada experiência é planejada de acordo com a ocasião,
+    suas preferências e o que você deseja proporcionar
+    aos seus convidados.
+  </p>
+
   <div class="cards">
-    <article class="card"><div class="num">01</div><h3>Jantares especiais</h3><p>Uma ocasião especial merece uma experiência à altura, sem você precisar se preocupar com a cozinha.</p></article>
-    <article class="card"><div class="num">02</div><h3>Eventos e encontros</h3><p>Uma experiência personalizada para receber amigos, família ou convidados.</p></article>
-    <article class="card"><div class="num">03</div><h3>Menu personalizado</h3><p>Opções pensadas conforme suas preferências, necessidades e ocasião.</p></article>
+
+    <article class="card">
+      <div class="number">01</div>
+      <h3>Jantares especiais</h3>
+      <p>
+        Uma experiência gastronômica para celebrar a dois
+        ou aproveitar uma ocasião especial.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="number">02</div>
+      <h3>Eventos e encontros</h3>
+      <p>
+        Uma proposta personalizada para receber amigos,
+        família e convidados.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="number">03</div>
+      <h3>Menu personalizado</h3>
+      <p>
+        Preparações planejadas conforme suas preferências
+        e necessidades.
+      </p>
+    </article>
+
   </div>
 </section>
 
 <section>
   <div class="eyebrow">Como funciona</div>
-  <h2>Da ideia à mesa.</h2>
-  <ol class="how">
-    <li>Você conta qual é a ocasião e o que imaginou.</li>
-    <li>Alinhamos o menu e os detalhes da experiência.</li>
-    <li>Tudo é combinado para tornar seu momento especial.</li>
+
+  <h2>Da primeira conversa à mesa.</h2>
+
+  <ol class="steps">
+    <li>
+      Você conta a ocasião, a data e a quantidade de pessoas.
+    </li>
+
+    <li>
+      Conversamos sobre preferências e possibilidades de menu.
+    </li>
+
+    <li>
+      Alinhamos os detalhes e planejamos sua experiência.
+    </li>
   </ol>
 </section>
 
-<section class="highlight" id="contato">
-  <div class="eyebrow" style="color:var(--sun)">Vamos conversar?</div>
-  <h2>Conte o que você está planejando.</h2>
-  <p>Responda rapidinho e envie sua ideia pelo WhatsApp para solicitar um orçamento.</p>
-  <div class="quiz">
-    <p class="q">Qual experiência você procura?</p>
-    <div class="opts" id="opcoes">
-      <button class="opt" type="button" data-value="Jantar especial">Jantar especial</button>
-      <button class="opt" type="button" data-value="Evento ou confraternização">Evento ou confraternização</button>
-      <button class="opt" type="button" data-value="Menu personalizado">Menu personalizado</button>
-      <button class="opt" type="button" data-value="Ainda estou definindo">Ainda estou definindo</button>
-    </div>
-    <div class="result">
-      <a class="btn alt" id="whatsapp" href="https://wa.me/5547988708373?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20o%20servi%C3%A7o%20de%20Personal%20Chef." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
-    </div>
+<section class="contact" id="contato">
+  <div class="eyebrow" style="color:var(--gold)">
+    Vamos conversar?
   </div>
+
+  <h2>Qual experiência você está planejando?</h2>
+
+  <p>
+    Escolha uma opção e envie uma mensagem diretamente
+    para o Gustavo pelo WhatsApp.
+  </p>
+
+  <div class="options">
+
+    <button class="option" data-value="Jantar especial">
+      Jantar especial
+    </button>
+
+    <button class="option" data-value="Evento ou confraternização">
+      Evento ou confraternização
+    </button>
+
+    <button class="option" data-value="Menu personalizado">
+      Menu personalizado
+    </button>
+
+    <button class="option" data-value="Quero conversar sobre possibilidades">
+      Quero conversar sobre possibilidades
+    </button>
+
+  </div>
+
+  <p style="margin-bottom:18px">
+    Atendimento em Joinville e região, mediante consulta.
+  </p>
+
+  <a
+    class="btn alt"
+    id="whatsapp"
+    href="https://wa.me/5547988708373?text=Ol%C3%A1%2C%20Gustavo!%20Gostaria%20de%20conhecer%20seu%20trabalho%20como%20Personal%20Chef."
+    target="_blank"
+    rel="noopener"
+  >
+    Conversar pelo WhatsApp
+  </a>
 </section>
 
-<footer>Personal Chef · Uma experiência especial à mesa</footer>
+<footer>
+  Gustavo Henrique Izé · Personal Chef · Joinville, Santa Catarina
+</footer>
+
 <script>
-const botoes = document.querySelectorAll('.opt');
-const link = document.getElementById('whatsapp');
-let escolha = '';
-botoes.forEach(botao => {
-  botao.addEventListener('click', () => {
-    botoes.forEach(item => item.classList.remove('selected'));
-    botao.classList.add('selected');
-    escolha = botao.dataset.value;
-    const mensagem = 'Olá! Gostaria de solicitar informações sobre Personal Chef. Tenho interesse em: ' + escolha + '. Podemos conversar?';
-    link.href = 'https://wa.me/5547988708373?text=' + encodeURIComponent(mensagem);
+const buttons = document.querySelectorAll(".option");
+const whatsapp = document.getElementById("whatsapp");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    buttons.forEach(item => item.classList.remove("selected"));
+
+    button.classList.add("selected");
+
+    const message =
+      "Olá, Gustavo! Tenho interesse em: " +
+      button.dataset.value +
+      ". Gostaria de conversar sobre uma experiência de Personal Chef.";
+
+    whatsapp.href =
+      "https://wa.me/5547988708373?text=" +
+      encodeURIComponent(message);
+
   });
 });
 </script>
+
 </body>
 </html>
